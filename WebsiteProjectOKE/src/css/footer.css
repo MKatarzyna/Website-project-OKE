@@ -1,0 +1,64 @@
+
+/* footer {
+    text-align: center;
+    color: var(--main-dark-color);
+    background-color: var(--light-pink-color);
+    background: linear-gradient(90deg, var(--latte-color) 0%, var(--light-pink-color) 40%, var(--pink-color) 80%, var(--main-dark-color) 100%);
+} */
+
+:root {
+    --main-dark-color: #8E518D;
+    --white-color: #FFFFFF;
+    --violet-color: #BE78D3;
+    --pink-color: #F79AD3;
+    --light-pink-color: #F7C7DB;
+    --latte-color: #D7C0D0;
+}
+
+.footer {
+    padding: 56px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* bottom: 0; */
+    /* height: 160px; */
+    /* background-color: aliceblue; */
+    color: var(--main-dark-color);
+    background-color: var(--light-pink-color);
+    background: linear-gradient(90deg, var(--latte-color) 0%, var(--light-pink-color) 40%, var(--pink-color) 80%, var(--main-dark-color) 100%);
+    flex-direction: column;
+}
+
+.icon--list {
+    display: flex;
+    list-style: none;
+    width: 80%;
+    /* ponizej 300px rozszerzaj ten element do 80%, granica do jakiej ma sie rozszezac dany element */
+    max-width: 300px;
+    justify-content: space-between;
+}
+
+.icon--list li:nth-child(-n+2) {
+    color: dodgerblue;
+}
+
+.icon--list li:nth-child(3) {
+    color: yellow;
+}
+
+.icon--list li:nth-child(4) {
+    color: blueviolet;
+}
+
+.icon--wrapper {
+    font-size: 40px;
+
+}
+
+.yellow {
+    color: yellow;
+}
+
+.violet {
+    color: blueviolet;
+}

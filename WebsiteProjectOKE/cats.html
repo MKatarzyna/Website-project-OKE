@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Beauty</title>
+    <link rel="shortcut icon" type="image/png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdoKWX29WptGBB-jJLkyDd4i85ejKTK8_4FaJKsYB5P1R4yLncOQ">
+
+    <link rel="stylesheet" href="src/css/navigation.css">
+    <link rel="stylesheet" href="src/css/main.css">
+    <link rel="stylesheet" href="src/css/footer.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+
+    <link rel="icon" href="../../../../favicon.ico">
+    <link href="resources/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons' rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/css/cats.css">
+</head>
+<body>
+    <nav class="navigation">
+        <img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ06Oe8ACN6-uYw-p-DiqLEVsQaxOXfTtKaXnYc5PTRX_LhrQJH3A" alt="logo">
+        <ul class="navigation--links">
+            <li class="link-wrapper"><a href="#home">Home</a></li>
+            <li class="link-wrapper"><a href="#gallery">Gallery</a></li>
+            <li class="link-wrapper"><a href="#services">Services</a></li>
+            <li class="link-wrapper"><a href="#makeup">Makeup</a></li>
+            <li class="link-wrapper"><a href="beautyTreatments.html">Beauty treatments</a></li>
+            <li class="link-wrapper"><a href="library.html">CityBikes</a></li>
+        </ul>
+
+        <!-- THIS IS MENU TOGGLE -->
+
+        <div class="menu">
+            <input type="checkbox" name="menu-toggle" class="menu-toggle">
+
+            <span class="menu--hamburger-bar"></span>
+            <span class="menu--hamburger-bar"></span>
+            <span class="menu--hamburger-bar"></span>
+
+            <ul class="navigation--hidden-menu">
+                <li class="navigation--link"><a href="#home">Home</a></li>
+                <li class="navigation--link"><a href="#gallery">Gallery</a></li>
+                <li class="navigation--link"><a href="#services">Services</a></li>
+                <li class="navigation--link"><a href="#makeup">Makeup</a></li>
+                <li class="navigation--link"><a href="beautyTreatments.html">Beauty treatments</a></li>
+                <li class="navigation--link"><a href="cityBikes.html">CityBikes</a></li>
+            </ul>
+        </div> 
+    </nav>
+
+    <main role="main">
+
+        <div id="element_z_tlem">
+            <p id="akapit">Meow :3 If you want to see more cats, just click on the button "ANOTHER" :)<p>
+                        </div>    
+            
+
+        <div id="app">
+            <v-app>
+            <v-content>
+                <v-container>
+
+                    <v-layout align-center justify-center>
+                        <v-btn color="blue" dark large @click="loadNextImage" >
+                            Another &nbsp; <v-icon>refresh</v-icon>
+                        </v-btn>
+                    </v-layout>
+
+                    <v-layout row wrap>
+                        <v-flex xs12 >
+                        <v-card flat tile class="d-flex">
+                            <v-img :src="image.url" contain>
+                            </v-img>
+                        </v-card>
+                        </v-flex>
+                    </v-layout>
+
+                </v-container>
+            </v-content>
+            </v-app>
+        </div>
+
+        <footer class="footer container-fluid py-4">
+            <ul class="icon--list">
+                <li>
+                    <span class="icon--wrapper">
+                        <i class="fab fa-twitter"></i>
+                    </span>
+                </li>
+                <li>
+                    <span class="icon--wrapper">
+                        <i class="fab fa-facebook"></i>
+                    </span>
+                </li>
+                <li>
+                    <span class="icon--wrapper">
+                        <i class="fab fa-snapchat"></i>
+                    </span>
+                </li>
+                <li>
+                    <span class="icon--wrapper">
+                        <i class="fab fa-twitch"></i>
+                    </span>
+                </li>
+            </ul>
+            <p>&copy; 2019 | For Your Beauty.   Designed with ♡ by Katarzyna Mural</p>
+        </footer>
+        
+    </main>
+
+  <script>
+    new Vue({ 
+        el: '#app',
+        data: {
+            image: { url: ""}
+        },
+        created(){
+            this.loadNextImage();
+        } ,
+        methods:{
+            async loadNextImage()
+            {
+                try{
+                    axios.defaults.headers.common['x-api-key'] = "DEMO-API-KEY" // Replace this with your API Key
+                    let response = await axios.get('https://api.thecatapi.com/v1/images/search', { params: { limit:1, size:"full" } } ) // Ask for 1 Image, at full resolution
+                    
+                    this.image = response.data[0] // the response is an Array, so just use the first item as the Image
+                    console.log("-- Image from TheCatAPI.com")
+                    console.log("id:", this.image.id)
+                    console.log("url:", this.image.url)
+                }catch(err){
+                    console.log(err)
+                }
+            }
+        }
+    })
+  </script>
+</body>
+</html>

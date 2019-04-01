@@ -1,0 +1,30 @@
+#element_background {
+    border:3px solid #EEE;
+    animation:motion 300s linear infinite alternate;
+    -webkit-animation:motion 300s linear infinite alternate;
+    background-image:url('http://webkod.pl/images/para1.png'),
+                     url('http://webkod.pl/images/para2.png'),
+                     url('http://webkod.pl/images/para3.png');
+  }
+
+  #text {
+    width:300px;
+    margin:84px auto;
+    padding:10px;
+    border:3px solid #EEE;
+    background-color:rgba(255,255,255,0.7);
+    font-size:24px;
+  }
+
+  /*------------------------ANIMACJA-RUCHOME-TŁO------------------------*/
+  @keyframes motion
+  {
+    0% {background-position:0 0, 0 0, 0 0;}
+    100% {background-position:10000px 0, 7500px 0, 5000px 0;}
+  }
+
+  @-webkit-keyframes motion
+  {
+    0% {background-position:0 0, 0 0, 0 0;}
+    100% {background-position:10000px 0, 7500px 0, 5000px 0;}
+  }

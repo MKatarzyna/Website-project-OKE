@@ -1,0 +1,16 @@
+:root {
+    --main-dark-color: #8E518D;
+    --white-color: #FFFFFF;
+    --violet-color: #BE78D3;
+    --pink-color: #F79AD3;
+    --light-pink-color: #F7C7DB;
+    --latte-color: #D7C0D0;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+
+html, body, ul, h1, div {
+    margin: 0;
+    padding: 0;
+    font-family: 'Dancing Script', cursive, sans-serif;
+}

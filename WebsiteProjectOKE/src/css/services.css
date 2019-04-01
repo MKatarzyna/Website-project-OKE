@@ -1,0 +1,50 @@
+:root {
+    --main-dark-color: #8E518D;
+    --white-color: #FFFFFF;
+    --violet-color: #BE78D3;
+    --pink-color: #F79AD3;
+    --light-pink-color: #F7C7DB;
+    --latte-color: #D7C0D0;
+}
+
+.services {
+    /* background-color: var(--white-color); */
+    /* display: flex; */
+    padding: 72px 24px;
+    margin: 50px;
+    text-align: center;
+}
+
+.services--card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--pink-color);
+    padding: 32px 16px;
+    box-shadow: 25px 3px 82px 0px rgba(66,17,66,1);
+    
+}
+
+.services--list {
+    display: flex;
+    list-style: none;
+}
+
+.services--list-item img{
+    border-radius: 50%;
+}
+
+.title {
+    color: var(--white-color);
+    /* solid, dashed, double */
+    border-bottom: 4px var(--white-color) double; 
+    padding-bottom: 16px;
+    width: max-content; /* tyle ile treści to taką ustaw szerokość podkreślenia*/
+    
+}
+
+@media screen and (max-width: 850px) {
+    .services--list {
+        flex-direction: column;
+    }
+}
