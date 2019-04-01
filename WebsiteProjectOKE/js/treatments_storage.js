@@ -9,25 +9,43 @@ export const addTreatmentToStorage = id => {
     if(treatmentsInStorage) {
         treatmentsInStorage.push(treatmentToAdd);
 
-        let x = (treatmentsInStorage) => treatmentsInStorage.filter((v,i) => treatmentsInStorage.indexOf(v) === i)
-        x(treatmentsInStorage);
+        // let treatments_without_duplicates = Array.from(new Set(treatmentsInStorage));
+
+        var seenNames = {};
+        const treatmentsWithoutDuplicatesArray = treatmentsInStorage.filter(function(currentObject) {
+            if (currentObject.id in seenNames) {
+                return false;
+            } else {
+                seenNames[currentObject.id] = true;
+                return true;
+            }
+        });
+
+
+
+        console.log(treatmentsWithoutDuplicatesArray);
+        // localStorage.setItem(STORAGE_KEY, JSON.stringify(treatmentsWithoutDuplicatesArray));
+
+
+        // let x = (treatmentsInStorage) => treatmentsInStorage.filter((v,i) => treatmentsInStorage.indexOf(v) === i)
+        // x(treatmentsInStorage);
 
         // let unique = [...new Set(treatmentToAdd)];
-        // console.log(unique);
+        // console.log(treatments_without_duplicates);
 
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(treatmentsInStorage));
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(treatmentsWithoutDuplicatesArray));
     } else {
         localStorage.setItem(STORAGE_KEY, JSON.stringify([treatmentToAdd]));
     }
 }
 
-export const getTreatmentsToStorage = () => {
+export const getTreatmentsFromStorage = () => {
     const dataStorage = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
     return dataStorage;
 }
 
-export const removeTreatmentsToStorage = (id) => {
-    const treatsOutFromStorage = getTreatmentsToStorage();
+export const removeTreatmentsFromStorage = (id) => {
+    const treatsOutFromStorage = getTreatmentsFromStorage();
     const treatmentsNewArray = treatsOutFromStorage.filter(tips => tips.id != id);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(treatmentsNewArray));
 

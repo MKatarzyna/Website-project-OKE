@@ -1,9 +1,9 @@
-import {getTreatmentsToStorage, removeTreatmentsToStorage} from './treatments_storage.js';
+import {getTreatmentsFromStorage, removeTreatmentsFromStorage} from './treatments_storage.js';
 
 const list = document.querySelector('.library') ;
 
 const buildLibrary = () => {
-    const favoriteTips = getTreatmentsToStorage();
+    const favoriteTips = getTreatmentsFromStorage();
 
     const listItemElements = favoriteTips.map(tips => {
         const listItem = document.createElement('li');
@@ -14,7 +14,7 @@ const buildLibrary = () => {
         button.textContent = "Dislike";
         button.classList.add('dislike_button');
         button.onclick = () => {
-            removeTreatmentsToStorage(tips.id);
+            removeTreatmentsFromStorage(tips.id);
 
             while(list.firstChild) {
                 list.removeChild(list.firstChild); 
