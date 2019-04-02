@@ -7,6 +7,12 @@
     --latte-color: #D7C0D0;
 }
 
+#catImage {
+    width: 30px;
+    height: 30px;
+
+}
+
 .navigation {
     color: var(--main-dark-color);
     background-color: var(--light-pink-color);
@@ -19,7 +25,6 @@
 .navigation--links {
     display: flex;
     list-style: none;
-    
 }
 
 .logo {
@@ -35,6 +40,7 @@
 .menu {
     display: none;
     position: relative;
+    /* position: fixed; */
     z-index: 1;
     margin-right: 16px;
 }
@@ -75,7 +81,10 @@
     top: 162px;
     transform: translate(0%, 0);
     transition: transform 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
 
+.navigation--hidden-menu:hover {
+    right: 0;
 }
 
 .menu input:checked ~ .navigation--hidden-menu {

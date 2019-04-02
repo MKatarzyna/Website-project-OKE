@@ -14,7 +14,7 @@ const createTitleElement = (part, title) => {
 
 const createPhoto = (imgUrl) => {
   const image = document.createElement('img');
-  // ('src' `./assets/${imgUrl}`)
+  // ('src' `./assets/${imgUrl}`)  // 'src' `imgUrl="https://www.placecage.com/400/400")
   image.setAttribute('src', imgUrl="https://www.placecage.com/400/400");
   image.classList.add('tips_photo');
   return image;

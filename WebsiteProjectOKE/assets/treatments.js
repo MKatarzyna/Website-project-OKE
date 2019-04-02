@@ -1,7 +1,7 @@
 const partOfTheBody = [
   {
     id: 1,
-    // picture: ,
+    picture: 'https://images.pexels.com/photos/33260/honey-sweet-syrup-organic.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500',
     part: 'Hair',
     title: 'Honey wrap for matte hair',
     durationInMinutes: 15,
@@ -14,6 +14,7 @@ const partOfTheBody = [
   },
   {
     id: 2,
+    picture: '',
     part: 'Hair',
     title: 'A natural moisturizing conditioner',
     durationInMinutes: 20,

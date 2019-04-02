@@ -1,5 +1,14 @@
+:root {
+  --main-dark-color: #8E518D;
+  --white-color: #FFFFFF;
+  --violet-color: #BE78D3;
+  --pink-color: #F79AD3;
+  --light-pink-color: #F7C7DB;
+  --latte-color: #D7C0D0;
+}
+
 #element_background {
-    border:3px solid #EEE;
+    /* border:3px solid #EEE; */
     animation:motion 300s linear infinite alternate;
     -webkit-animation:motion 300s linear infinite alternate;
     background-image:url('http://webkod.pl/images/para1.png'),
@@ -11,12 +20,12 @@
     width:300px;
     margin:84px auto;
     padding:10px;
-    border:3px solid #EEE;
+    border:3px solid var(--light-pink-color);
     background-color:rgba(255,255,255,0.7);
     font-size:24px;
   }
 
-  /*------------------------ANIMACJA-RUCHOME-TŁO------------------------*/
+  /*-----------------------BACKGROUND-ANIMATION--------------------------*/
   @keyframes motion
   {
     0% {background-position:0 0, 0 0, 0 0;}
@@ -27,4 +36,62 @@
   {
     0% {background-position:0 0, 0 0, 0 0;}
     100% {background-position:10000px 0, 7500px 0, 5000px 0;}
+  }
+
+/* ---------------------------------LION---------------------------------- */
+
+  .lions {
+    width:90px;
+    height:50px;
+    background:url('http://webkod.pl/images/lions.png') no-repeat;
+  }
+
+  #first-lion {
+    animation:lion-running 500ms steps(14) infinite, way_lion-1 10s infinite alternate;
+    -webkit-animation:lion-running 500ms steps(14) infinite, way_lion-1 10s infinite alternate;
+  }
+
+  #second-lion {
+    animation:lion-running 500ms steps(14) infinite, way_lion-2 10s infinite alternate;
+    -webkit-animation:lion-running 500ms steps(14) infinite, way_lion-2 10s infinite alternate;
+    transform:rotateX(180deg);
+    -webkit-transform:rotateX(180deg);
+    opacity:0.1;
+  }
+
+  /*-------------------LION-ANIMATIONS------------------*/
+  @keyframes lion-running
+  {
+    0% {background-position:0 0;}
+    100% {background-position:0 -700px;}
+  }
+
+  @keyframes way_lion-1
+  {
+    0% {transform:translateX(0) scale(1);}
+    100% {transform:translateX(300px) scale(0.1);}
+  }
+
+  @keyframes way_lion-2
+  {
+    0% {transform:rotateX(180deg) translateX(0) translateY(0) scale(1);}
+    100% {transform:rotateX(180deg) translateX(300px) translateY(45px) scale(0.1);}
+  }
+
+  @-webkit-keyframes lion-running
+  {
+    0% {background-position:0 0;}
+    100% {background-position:0 -700px;}
+  }
+
+  @-webkit-keyframes way_lion-1
+  {
+    0% {-webkit-transform:translateX(0) scale(1);}
+    100% {-webkit-transform:translateX(300px) scale(0.1);}
+  }
+
+  @-webkit-keyframes way_lion-2
+  {
+    0% {-webkit-transform:rotateX(180deg) translateX(0) translateY(0) scale(1);}
+    100% {-webkit-transform:rotateX(180deg) translateX(300px) translateY(45px) scale(0.1);}
   }
