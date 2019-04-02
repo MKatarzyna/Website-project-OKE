@@ -21,7 +21,10 @@ export const addTreatmentToStorage = id => {
             }
         });
 
-
+        console.log(id);
+        document.getElementById("button" + id).textContent = "Liked!!";
+        // console.log(localStorage.getElementById("button"));
+        
 
         console.log(treatmentsWithoutDuplicatesArray);
         // localStorage.setItem(STORAGE_KEY, JSON.stringify(treatmentsWithoutDuplicatesArray));

@@ -27,9 +27,10 @@ const createDescription = (methodOfPreparing) => {
   return cardDescription;
 }
 
-const createFavoriteButton = (onClickFn) => {
+const createFavoriteButton = (onClickFn, id) => {
   const button = document.createElement('button');
   button.textContent = "Like";
+  button.id = "button" + id;
   button.classList.add('like_button');
   button.onclick = onClickFn;
   return button;
@@ -49,7 +50,7 @@ const treatmentsCardElements = partOfTheBody.map(partOfTheBody => {
   treatmentsWrapper.appendChild(createDescription(partOfTheBody.methodOfPreparing));
 
   treatmentsWrapper.appendChild(createFavoriteButton(
-    () => addTreatmentToStorage(partOfTheBody.id)));
+    () => addTreatmentToStorage(partOfTheBody.id), partOfTheBody.id));
 
   return treatmentsWrapper;
 });

@@ -17,7 +17,8 @@ p {
 }
 
 button {
-    background-color: violet;
-    border: 3px solid greenyellow;
+    background-color: rgb(252, 217, 255);
+    border: 3px solid rgba(185, 255, 244, 0.783);
     border-radius: 8px;
 }
+
