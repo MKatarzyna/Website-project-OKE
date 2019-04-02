@@ -34,7 +34,7 @@
 
 .link-wrapper {
     padding: 0 16px;      /* góra i dól na 0px a boki na 16px*/
-    font-size: 1.25em;     /* */
+    font-size: 1.25em;   
 }
 
 .menu {
@@ -56,7 +56,7 @@
     top: -7px;
     left: -5px;
     cursor: pointer;
-    opacity: 0; /*aby ustawil sie wzgledem menu*/
+    opacity: 0;
     z-index: 2;
 }
 

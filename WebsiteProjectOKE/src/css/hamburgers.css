@@ -1,4 +1,9 @@
 /* Screen reader only */
+
+/* body {
+  background-color: #000;
+} */
+
 .sr-only {
     position: absolute;
     width: 1px;
@@ -59,7 +64,7 @@
     padding: .75em 15px;
     line-height: 1em;
     font-size: 1em;
-    color: #fff; /* rgb(251, 192, 192); */
+    color:/* #fff;*/ rgb(251, 192, 192);
     text-decoration: none;
     border-bottom: 1px solid #383838;
   }

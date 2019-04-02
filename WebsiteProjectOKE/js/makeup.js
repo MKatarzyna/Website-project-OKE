@@ -41,7 +41,5 @@ const changeBrand = () => {
     getProductByBrand(event.target.value);
 }
 
-// function populateDoggoSelect(breeds) {
-// }
 
 fetchBrandType();

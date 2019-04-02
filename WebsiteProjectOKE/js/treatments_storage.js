@@ -8,9 +8,7 @@ export const addTreatmentToStorage = id => {
     
     if(treatmentsInStorage) {
         treatmentsInStorage.push(treatmentToAdd);
-
-        // let treatments_without_duplicates = Array.from(new Set(treatmentsInStorage));
-
+        
         var seenNames = {};
         const treatmentsWithoutDuplicatesArray = treatmentsInStorage.filter(function(currentObject) {
             if (currentObject.id in seenNames) {
@@ -23,19 +21,9 @@ export const addTreatmentToStorage = id => {
 
         console.log(id);
         document.getElementById("button" + id).textContent = "Liked!!";
-        // console.log(localStorage.getElementById("button"));
-        
 
         console.log(treatmentsWithoutDuplicatesArray);
-        // localStorage.setItem(STORAGE_KEY, JSON.stringify(treatmentsWithoutDuplicatesArray));
-
-
-        // let x = (treatmentsInStorage) => treatmentsInStorage.filter((v,i) => treatmentsInStorage.indexOf(v) === i)
-        // x(treatmentsInStorage);
-
-        // let unique = [...new Set(treatmentToAdd)];
-        // console.log(treatments_without_duplicates);
-
+        
         localStorage.setItem(STORAGE_KEY, JSON.stringify(treatmentsWithoutDuplicatesArray));
     } else {
         localStorage.setItem(STORAGE_KEY, JSON.stringify([treatmentToAdd]));
@@ -53,5 +41,3 @@ export const removeTreatmentsFromStorage = (id) => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(treatmentsNewArray));
 
 }
-
-// removeTreatmentsToStorage(2);

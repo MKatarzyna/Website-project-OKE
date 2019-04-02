@@ -33,10 +33,6 @@ const buildLibrary = () => {
     listItemElements.forEach(item => {
         list.appendChild(item);
     });
-
 }
-
-
-
 
 buildLibrary();

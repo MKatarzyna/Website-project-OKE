@@ -1,9 +1,6 @@
 import partOfTheBody from '../assets/treatments.js';
 import { addTreatmentToStorage } from './treatments_storage.js';
 
-// console.log(partOfTheBody);
-// alert(JSON.stringify(partOfTheBody));
-
 const section = document.querySelector('.tips');
 
 const createTitleElement = (part, title) => {
@@ -36,15 +33,10 @@ const createFavoriteButton = (onClickFn, id) => {
   return button;
 }
 
-// const treatmentsCardElements = partOfTheBody.map(partOfTheBody => partOfTheBody.part);
 const treatmentsCardElements = partOfTheBody.map(partOfTheBody => {
   const treatmentsWrapper = document.createElement('div');
   
   treatmentsWrapper.setAttribute('class', 'treatments_wrapper');
-  // linijka wyzej i nizej to to samo
-  // treatmentsWrapper.classList.add('treatments_wrapper');
-  // treatmentsWrapper.textContent = partOfTheBody.title;
-
   treatmentsWrapper.appendChild(createTitleElement(partOfTheBody.part, partOfTheBody.title));
   treatmentsWrapper.appendChild(createPhoto(partOfTheBody.cover));
   treatmentsWrapper.appendChild(createDescription(partOfTheBody.methodOfPreparing));
@@ -54,7 +46,5 @@ const treatmentsCardElements = partOfTheBody.map(partOfTheBody => {
 
   return treatmentsWrapper;
 });
-
-// console.log(treatmentsCardElements);
 
 treatmentsCardElements.forEach(element => section.appendChild(element));
