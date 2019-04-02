@@ -1,10 +1,21 @@
 let selectElement;
 
-const fetchBrandType = async () => {
+const fetchProductType = async () => {
     const productsData = await fetch('http://makeup-api.herokuapp.com/api/v1/products.json').then(data => data.json());
 
     console.log(productsData);
 }
+
+
+
+// fetch('http://makeup-api.herokuapp.com/api/v1/products.json')
+//     .then(function(resp) {
+//         return resp.json();
+//     })
+//     .then(function(data) {
+//         console.log(data.products);
+//     })
+
 
 const productSelect = (product) => {
     select = document.querySelector('.product-select');
@@ -35,11 +46,11 @@ const getProductByBrand = async (productId) => {
     console.log(data);
 }
 
-const changeBrand = () => {
-    console.log("I will change brand");
+const changeProduct = () => {
+    console.log("I will change product");
     console.log(event.target.value);
     getProductByBrand(event.target.value);
 }
 
 
-fetchBrandType();
+fetchProductType();
